@@ -1,6 +1,5 @@
 package com.andrew.catfoodadviser.model;
 
-import com.mongodb.lang.Nullable;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;

@@ -2,9 +2,6 @@ package com.andrew.catfoodadviser.model;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-
-import javax.persistence.Id;
-
 import javax.persistence.*;
 import java.util.List;
 
@@ -30,6 +27,5 @@ public class CatFood extends Analysis {
     private Integer allergyWarning;
     private Age targetAge;
     private ActivityLevel activityLevel;
-    private Moisture moisture;
     private Texture texture;
 }

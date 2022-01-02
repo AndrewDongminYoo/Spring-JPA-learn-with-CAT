@@ -9,5 +9,5 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 public class CatFoodService {
 
-    public final CatFoodRepository catFoodRepository;
+    private final CatFoodRepository catFoodRepository;
 }
