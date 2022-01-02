@@ -1,6 +1,21 @@
 package com.andrew.catfoodadviser.model;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@NoArgsConstructor
+@Getter
+@Entity
 public class Analysis {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
     // Main Analysis
     private Double protein;
     private Double fat;
@@ -12,7 +27,7 @@ public class Analysis {
     // Fatty Acids
     private Double omega3FattyAcid;
     private Double omega6FattyAcid;
-    private Double docohexainAcid;
+    private Double docosahexaenoicAcid;
     private Double linoleicAcid;
 
     // Amino Acids

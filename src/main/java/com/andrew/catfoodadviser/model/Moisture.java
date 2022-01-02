@@ -8,7 +8,7 @@ import lombok.Getter;
 public enum Moisture {
 
     DRY("dried", "건식"),
-    WET("moistured", "습식");
+    WET("moist", "습식");
 
     private final String type;
     private final String typeInKor;
