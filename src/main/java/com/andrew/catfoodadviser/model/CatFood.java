@@ -28,4 +28,8 @@ public class CatFood extends Analysis {
     private List<Ingredient> ingredients;
     private Double ingredientsScore;
     private Integer allergyWarning;
+    private Age targetAge;
+    private ActivityLevel activityLevel;
+    private Moisture moisture;
+    private Texture texture;
 }

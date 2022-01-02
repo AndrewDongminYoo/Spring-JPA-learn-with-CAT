@@ -8,7 +8,7 @@ import java.util.List;
 
 @Getter
 @Entity
-public class Recall {
+public class Issue {
     @Id
     private Long id;
     @OneToMany
