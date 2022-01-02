@@ -9,6 +9,8 @@ import javax.persistence.Id;
 @Entity
 public class Ingredient {
     @Id
+    private Long id;
     private String name;
-    private Boolean allergen;
+    private AllergenLevel allergyLevel;
+    private IngredientLevel level;
 }

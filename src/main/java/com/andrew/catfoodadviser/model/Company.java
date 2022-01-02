@@ -15,5 +15,11 @@ public class Company {
     private String logoImage;
     private String koreanName;
     private String englishName;
-    private Double socialScore = 5.0;
+    private String country;
+    private Double socialScore;
+
+    public Company(String name) {
+        this.englishName = name;
+        this.socialScore = 5.0;
+    }
 }

@@ -2,18 +2,16 @@ package com.andrew.catfoodadviser.model;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.ManyToAny;
 
 import javax.persistence.Id;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.List;
 
 @Getter
 @NoArgsConstructor
 @Entity
-public class CatFood {
+public class CatFood extends Analysis {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -25,9 +23,9 @@ public class CatFood {
     private Company importer;
     private Texture process;
     private Double packagingSize;
-    private Double Energy;
+    private Double EnergyPer100g;
     @OneToMany
     private List<Ingredient> ingredients;
-    @OneToOne
-    private Analysis analysis;
+    private Double ingredientsScore;
+    private Integer allergyWarning;
 }
