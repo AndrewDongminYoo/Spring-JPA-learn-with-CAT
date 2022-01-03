@@ -7,22 +7,19 @@ import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTVerificationException;
 import com.auth0.jwt.interfaces.Claim;
 import com.auth0.jwt.interfaces.DecodedJWT;
-import org.apache.commons.lang3.builder.ToStringBuilder;
-import org.apache.commons.lang3.builder.ToStringStyle;
-
-import java.util.Arrays;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 import java.util.Date;
 
+@Getter
+@ToString
 public final class Jwt {
 
     private final String issuer;
-
     private final String clientSecret;
-
     private final int expirySeconds;
-
     private final Algorithm algorithm;
-
     private final JWTVerifier jwtVerifier;
 
     public Jwt(String issuer, String clientSecret, int expirySeconds) {
@@ -53,34 +50,13 @@ public final class Jwt {
         return new Claims(jwtVerifier.verify(token));
     }
 
-    public String getIssuer() {
-        return issuer;
-    }
-
-    public String getClientSecret() {
-        return clientSecret;
-    }
-
-    public int getExpirySeconds() {
-        return expirySeconds;
-    }
-
-    public Algorithm getAlgorithm() {
-        return algorithm;
-    }
-
-    public JWTVerifier getJwtVerifier() {
-        return jwtVerifier;
-    }
-
+    @NoArgsConstructor
     static public class Claims {
         Long userKey;
         String name;
         String[] roles;
         Date iat;
         Date exp;
-
-        private Claims() {/*empty*/}
 
         Claims(DecodedJWT decodedJWT) {
             Claim userKey = decodedJWT.getClaim("userKey");
@@ -121,17 +97,6 @@ public final class Jwt {
 
         void eraseExp() {
             exp = null;
-        }
-
-        @Override
-        public String toString() {
-            return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE)
-                    .append("userKey", userKey)
-                    .append("name", name)
-                    .append("roles", Arrays.toString(roles))
-                    .append("iat", iat)
-                    .append("exp", exp)
-                    .toString();
         }
     }
 
